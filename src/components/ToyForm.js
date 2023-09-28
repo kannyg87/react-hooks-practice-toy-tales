@@ -1,9 +1,7 @@
 import React from "react";
 
 function ToyForm({handleSubmit, handleChange, formData}) {
-  function onChange(e) {
-   handleChange(e.target.value);
- }
+ 
   return (
     <div className="container">
       <form className="add-toy-form" on onSubmit={handleSubmit}>
@@ -14,7 +12,7 @@ function ToyForm({handleSubmit, handleChange, formData}) {
           value={formData.name}
           placeholder="Enter a toy's name..."
           className="input-text"
-          onChange={(e)=>onChange(e.target.value)}
+          onChange={handleChange}
         />
         <br />
         <input
@@ -23,7 +21,7 @@ function ToyForm({handleSubmit, handleChange, formData}) {
           value={formData.image}
           placeholder="Enter a toy's image URL..."
           className="input-text"
-          onChange={(e)=>onChange(e.target.value)}
+          onChange={handleChange}
         />
         <br />
         <input
